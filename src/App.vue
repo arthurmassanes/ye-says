@@ -26,7 +26,7 @@ export default {
   methods: {
     async loadQuote() {
       this.isLoading = true;
-      const response = await axios.get('http://api.kanye.rest');
+      const response = await axios.get('https://api.kanye.rest');
       this.quote = response.data.quote;
       this.isLoading = false;
     },
