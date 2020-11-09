@@ -1,28 +1,44 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+    <div class="card" @click="loadQuote">
+      <div v-if="!isLoading">
+        <h2>> Kanye says</h2>
+        <p>{{ quote }}</p>
+      </div>
+      <img class="face" v-show="isLoading" src="https://lh3.googleusercontent.com/proxy/ofKFX7Yxp9tarFaPIz_HtroirkgBpPoXs891SXpgKEVT5DV--UpfTDyjeLkHS9MbuQtje9M7V6lPH5gR0npqAEeFZnHWyuYjMm-7Ko0GJVQ" />
+    </div>
+  </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios';
+import './index.css';
 
 export default {
   name: 'App',
+  async created() {
+    await this.loadQuote();
+  },
+  methods: {
+    async loadQuote() {
+      this.isLoading = true;
+      const response = await axios.get('http://api.kanye.rest');
+      this.quote = response.data.quote;
+      this.isLoading = false;
+    },
+  },
+  data() {
+    return {
+      quote: '',
+      isLoading: false,
+    }
+  },
   components: {
-    HelloWorld
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
