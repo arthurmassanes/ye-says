@@ -3,7 +3,9 @@
     <div class="container">
     <div class="card" @click="loadQuote">
       <div v-if="!isLoading">
+      <div style="display: flex; flex-direction: row">
         <h2>> Kanye says</h2>
+      </div>
         <p>{{ quote }}</p>
       </div>
       <img class="face" v-show="isLoading" src="https://lh3.googleusercontent.com/proxy/ofKFX7Yxp9tarFaPIz_HtroirkgBpPoXs891SXpgKEVT5DV--UpfTDyjeLkHS9MbuQtje9M7V6lPH5gR0npqAEeFZnHWyuYjMm-7Ko0GJVQ" />
