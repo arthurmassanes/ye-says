@@ -8,7 +8,7 @@
       </div>
         <p>{{ quote }}</p>
       </div>
-      <img class="face" v-show="isLoading" src="https://lh3.googleusercontent.com/proxy/ofKFX7Yxp9tarFaPIz_HtroirkgBpPoXs891SXpgKEVT5DV--UpfTDyjeLkHS9MbuQtje9M7V6lPH5gR0npqAEeFZnHWyuYjMm-7Ko0GJVQ" />
+      <img class="face" v-show="isLoading" src="https://lh3.googleusercontent.com/proxy/1UAKLBUOIq8yUpc4i2HiHdjXsjecRYDSQpjXxVAdAiKwaF0ixsBvddhtr2VP0BJ2WizZSJRtDWlP9_IVEHb1md2AOqLTrMY5ZsoHc3s_RHrzBZhE0gzw" />
     </div>
   </div>
   </div>
@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       quote: '',
-      isLoading: false,
+      isLoading: true,
     }
   },
   components: {
