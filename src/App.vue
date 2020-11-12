@@ -8,7 +8,7 @@
       </div>
         <p>{{ quote }}</p>
       </div>
-      <img class="face" v-show="isLoading" src="https://lh3.googleusercontent.com/proxy/1UAKLBUOIq8yUpc4i2HiHdjXsjecRYDSQpjXxVAdAiKwaF0ixsBvddhtr2VP0BJ2WizZSJRtDWlP9_IVEHb1md2AOqLTrMY5ZsoHc3s_RHrzBZhE0gzw" />
+      <img class="face" v-show="isLoading" src="../public/ye.png" />
     </div>
   </div>
   </div>
@@ -27,6 +27,8 @@ export default {
     async loadQuote() {
       this.isLoading = true;
       const response = await axios.get('https://api.kanye.rest');
+      // uncomment to see loader
+      // await new Promise(resolve => setTimeout(resolve, 1000));
       this.quote = response.data.quote;
       this.isLoading = false;
     },
